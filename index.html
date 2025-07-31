@@ -22,12 +22,15 @@
     }
 
     button {
-      background-color: #e74c3c;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-    }
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 45px 15px; /* เพิ่มความสูง (top-bottom 25px, left-right 15px) */
+  font-size: 1.5em;
+}
+
 
     .footer {
       margin-top: 40px;
@@ -38,13 +41,16 @@
 <body>
 
   <h2>📍 แจ้งตำแหน่งที่ตั้ง</h2>
+<br>
 
-  <input type="text" id="username" placeholder="จุดสังเกต เช่น หน้าร้านข้าวมันไก่" required />
+  <input type="text" id="username" placeholder="จุดสังเกต" required />
   <br>
+<br>
+<br>
   <button onclick="sendLocation()">ส่งตำแหน่งของฉัน</button>
 
   <div class="footer">
-    <p>พัฒนาโดย Oxyfight Foundation</p>
+    <p>พัฒนาโดยมูลนิธิอ็อกซี่ไฟต์ | Oxyfight Foundation</p>
   </div>
 
   <script>
@@ -91,7 +97,7 @@
           if (res.ok) {
             Swal.fire('ส่งตำแหน่งเรียบร้อยแล้ว', '', 'success');
           } else {
-            Swal.fire('เกิดข้อผิดพลาดในการส่ง Discord', '', 'error');
+            Swal.fire('เกิดข้อผิดพลาดในการส่งตำแหน่ง', '', 'error');
           }
         } catch (err) {
           Swal.fire('ส่งไม่สำเร็จ', err.message, 'error');
